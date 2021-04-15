@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% load static %}
+{% block content %}
+
+<div class="container-md">
+
+    <form method="post">
+        {% csrf_token %}
+        <select class="form-select" aria-label="Default select example" name="basedatos">
+            <option selected>Seleccione universidad</option>
+            <option value="default">Default</option>
+            <option value="universidadumg">Mariano Galvez</option>
+            <option value="universidadsancarlos">San Carlos</option>
+        </select>
+        <br>
+
+        <div class="mb-3">
+            <label for="NNombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="NNombres" placeholder="" name="nombres">
+        </div>
+        <div class="mb-3">
+            <label for="AApellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="AApellidos" placeholder="" name="apellidos">
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+            <label class="form-check-label" for="inlineRadio1">Hombre</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+            <label class="form-check-label" for="inlineRadio2">Mujer</label>
+        </div>
+
+        <br><br>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success">Guardar estudiante</button>
+        </div>
+
+    </form>
+</div>
+
+
+{% endblock %}
